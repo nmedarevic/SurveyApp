@@ -3,21 +3,15 @@ import {Button, StyleSheet, Text, View} from 'react-native';
 
 export const Home = ({navigation}: any) => {
   return (
-    <View
-      style={[
-        styles.container,
-        {
-          flexDirection: 'column',
-        },
-      ]}>
+    <View style={styles.container}>
       <Text style={styles.label}>{'Welcome to Survey app'}</Text>
       <Button
         title="Start a survey"
-        onPress={() => navigation.navigate('Survey', {name: 'Jane'})}
+        onPress={() => navigation.navigate('Survey')}
       />
       <Button
         title="View previous surveys"
-        onPress={() => navigation.navigate('SurveyList', {name: 'Jane'})}
+        onPress={() => navigation.navigate('SurveyList')}
       />
     </View>
   );
@@ -30,6 +24,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignContent: 'center',
     alignItems: 'center',
+    flexDirection: 'column',
   },
   label: {
     textAlign: 'center',

@@ -3,11 +3,11 @@ import {Button} from 'react-native';
 import {TouchableHighlight} from 'react-native-gesture-handler';
 
 export interface ColourButtonProps {
-  index: number;
-  selectedIndex: number;
-  name: string;
-  colour: string;
-  onPress: Function;
+  index?: number;
+  selectedIndex?: number;
+  name?: string;
+  colour?: string;
+  onPress?: Function;
 }
 
 const buttonSize = 50;
@@ -19,13 +19,13 @@ const getButtonStyle = (isSelected: boolean) => ({
   paddingRight: 5,
   paddingLeft: 5,
 });
-
+const noop = () => {};
 export const ColourButton = ({
-  index,
-  selectedIndex,
-  name,
-  colour,
-  onPress,
+  index = 0,
+  selectedIndex = 1,
+  name = '',
+  colour = 'blue',
+  onPress = noop,
 }: ColourButtonProps) => (
   <TouchableHighlight style={getButtonStyle(index === selectedIndex)}>
     <Button

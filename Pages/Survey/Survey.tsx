@@ -2,12 +2,13 @@ import * as React from 'react';
 import {Button, Dimensions, StyleSheet, Text, View} from 'react-native';
 import {TouchableHighlight} from 'react-native-gesture-handler';
 import {QUESTIONS} from '../../config/questions';
-import {useSurvey} from '../../hooks/useSurvey';
+import * as useSurveyHook from '../../hooks/useSurvey';
 import {Alert} from 'react-native';
 import {ColourButtonQuestion, OnPressCallback} from './ColourButtonQuestion';
 import {SurveyResult} from '../../types/SurveyResult';
 
-var width = Dimensions.get('window').width;
+const {useSurvey} = useSurveyHook;
+const width = Dimensions.get('window').width;
 
 const questionTopics = [QUESTIONS.SKIN_RESULT, QUESTIONS.SLEEP_RESULT];
 

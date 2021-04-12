@@ -4,6 +4,9 @@ import {ScrollView} from 'react-native-gesture-handler';
 import {useSurvey} from '../../hooks/useSurvey';
 import {SurveyItem} from './SurveyItem';
 
+/**
+ * Shows a list of surveys
+ */
 export const SurveyList = ({navigation}: any) => {
   const {list} = useSurvey();
 

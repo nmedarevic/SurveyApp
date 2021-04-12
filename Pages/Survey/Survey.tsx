@@ -18,6 +18,12 @@ const width = Dimensions.get('window').width;
 
 const questionTopics = [QUESTIONS.SKIN_RESULT, QUESTIONS.SLEEP_RESULT];
 
+/**
+ * Survey page component
+ *
+ * Renders survey questions
+ * Renders previously completed survey if editing
+ */
 export const Survey = ({navigation, route}: any) => {
   const {list, createSurveyResult, updateSurveyResult} = useSurvey();
   const [answers, setAnswer]: [any, Function] = React.useState({});

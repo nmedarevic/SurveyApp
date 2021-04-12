@@ -22,7 +22,7 @@ const getButtonStyle = (isSelected: boolean) => ({
 const noop = () => {};
 export const ColourButton = ({
   index = 0,
-  selectedIndex = 1,
+  selectedIndex,
   name = '',
   colour = 'blue',
   onPress = noop,

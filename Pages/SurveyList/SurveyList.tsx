@@ -13,7 +13,11 @@ export const SurveyList = ({navigation}: any) => {
   return (
     <View>
       {list.map((item, index) => (
-        <SurveyItem key={`${index}`} {...item} onNavigate={onNavigate} />
+        <SurveyItem
+          key={`surveritem-${index}`}
+          {...item}
+          onNavigate={onNavigate}
+        />
       ))}
     </View>
   );

@@ -27,6 +27,7 @@ export const ColourButtonQuestion = ({
       <View style={styles.colourButtonQuestionContainer}>
         {colours.map((colour, index) => (
           <ColourButton
+            key={colour}
             index={index}
             name={name}
             selectedIndex={selectedIndex}

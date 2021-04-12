@@ -46,6 +46,7 @@ export const SurveyItem = ({
         <View style={styles.resultContentList}>
           {Object.keys(surveyResult).map((key: string) => (
             <ResultContent
+              key={`result-content-${key}`}
               buttonColour={colours[surveyResult[key]]}
               title={QUESTION_TITLES[key]}
               value={(surveyResult[key] + 1).toString()}

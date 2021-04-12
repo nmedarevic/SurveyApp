@@ -18,7 +18,7 @@ async function addSurveyResult(data: SurveyData): Promise<void> {
 
   const [results] = await db.executeSql(
     `INSERT INTO SurveyResult (id, timestamp, result)
-     VALUES (${Date.now()}, ${Date.now()}, '${JSON.stringify(data)}')
+     VALUES (${Date.now()}, ${Date.now()}, '${JSON.stringify(data)}');
     `,
   );
 
@@ -33,7 +33,7 @@ async function getAllSurveyResults(): Promise<SurveyResult[]> {
   const db = await getDatabase();
 
   const [results] = await db.executeSql(
-    'SELECT id, timestamp, result FROM SurveyResult',
+    'SELECT id, timestamp, result FROM SurveyResult;',
   );
 
   if (results === undefined) {
@@ -62,14 +62,12 @@ async function updateSurveyResult(
   const db = await getDatabase();
 
   await db.executeSql(
-    'UPDATE ListItem SET timestamp = ?, result = ? WHERE item_id = ?;',
+    'UPDATE SurveyResult SET timestamp = ?, result = ? WHERE id = ?;',
     [Date.now(), JSON.stringify(surveyResult), id],
   );
 
   return updateData;
 }
-
-// "Private" helpers
 
 async function getDatabase(): Promise<SQLite.SQLiteDatabase> {
   if (databaseInstance !== undefined) {

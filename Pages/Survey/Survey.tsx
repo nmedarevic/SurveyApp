@@ -13,19 +13,22 @@ const width = Dimensions.get('window').width;
 const questionTopics = [QUESTIONS.SKIN_RESULT, QUESTIONS.SLEEP_RESULT];
 
 export const Survey = ({navigation, route}: any) => {
-  const {list, createSurveyResult} = useSurvey();
+  const {list, createSurveyResult, updateSurveyResult} = useSurvey();
   const [answers, setAnswer]: [any, Function] = React.useState({});
 
   React.useEffect(() => {
-    const surveyId = route.params.id;
+    const surveyId = route?.params?.id;
+
+    if (typeof surveyId === 'undefined') {
+      return;
+    }
 
     const foundAnswer = list.find((item: SurveyResult) => item.id === surveyId);
-    console.log(surveyId, foundAnswer);
 
     if (foundAnswer) {
       setAnswer(foundAnswer.surveyResult);
     }
-  }, [list, route.params.id]);
+  }, [list, route.params]);
 
   const onQuestionAnswer = ({index, name}: OnPressCallback) => {
     setAnswer({
@@ -35,13 +38,24 @@ export const Survey = ({navigation, route}: any) => {
   };
 
   const onSubmit = async () => {
-    if (Object.keys(answers).length === 0) {
+    if (Object.keys(answers).length < 2) {
       Alert.alert('You must give both answers!');
 
       return;
     }
 
-    await createSurveyResult(answers);
+    const surveyId = route?.params?.id;
+    const foundAnswer = list.find((item: SurveyResult) => item.id === surveyId);
+
+    if (typeof foundAnswer === 'undefined') {
+      await createSurveyResult(answers);
+    } else {
+      const updateProps: SurveyResult = {
+        ...foundAnswer,
+        surveyResult: answers,
+      };
+      await updateSurveyResult(updateProps);
+    }
 
     navigation.navigate('Home');
   };

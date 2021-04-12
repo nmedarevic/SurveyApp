@@ -2,9 +2,6 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import {ColourButton} from '../ColourButton';
 
-jest.mock('react-native-gesture-handler', () => ({
-  TouchableHighlight: ({children}: any) => ({...children}),
-}));
 test('renders correctly', () => {
   const tree = renderer.create(<ColourButton />).toJSON();
   expect(tree).toMatchSnapshot();

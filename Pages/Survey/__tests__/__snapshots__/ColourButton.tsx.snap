@@ -2,11 +2,12 @@
 
 exports[`renders correctly 1`] = `
 <View
-  accessibilityRole="button"
-  accessibilityState={Object {}}
   accessible={true}
+  collapsable={false}
   focusable={true}
+  onBlur={[Function]}
   onClick={[Function]}
+  onFocus={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -15,45 +16,69 @@ exports[`renders correctly 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "opacity": 1,
+      "height": 50,
+      "paddingLeft": 5,
+      "paddingRight": 5,
+      "width": 50,
     }
   }
 >
   <View
+    accessibilityRole="button"
+    accessibilityState={Object {}}
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {},
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
+    testID="button-blue"
   >
-    <Text
+    <View
       style={
         Array [
-          Object {
-            "color": "#007AFF",
-            "fontSize": 18,
-            "margin": 8,
-            "textAlign": "center",
-          },
-          Object {
-            "color": "blue",
-          },
+          Object {},
         ]
       }
     >
-      1
-    </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#007AFF",
+              "fontSize": 18,
+              "margin": 8,
+              "textAlign": "center",
+            },
+            Object {
+              "color": "blue",
+            },
+          ]
+        }
+      >
+        1
+      </Text>
+    </View>
   </View>
 </View>
 `;
 
 exports[`renders correctly with props 1`] = `
 <View
-  accessibilityRole="button"
-  accessibilityState={Object {}}
   accessible={true}
+  collapsable={false}
   focusable={true}
+  onBlur={[Function]}
   onClick={[Function]}
+  onFocus={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -62,45 +87,69 @@ exports[`renders correctly with props 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "opacity": 1,
+      "height": 50,
+      "paddingLeft": 5,
+      "paddingRight": 5,
+      "width": 50,
     }
   }
 >
   <View
+    accessibilityRole="button"
+    accessibilityState={Object {}}
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {},
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
+    testID="button-red"
   >
-    <Text
+    <View
       style={
         Array [
-          Object {
-            "color": "#007AFF",
-            "fontSize": 18,
-            "margin": 8,
-            "textAlign": "center",
-          },
-          Object {
-            "color": "red",
-          },
+          Object {},
         ]
       }
     >
-      1
-    </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#007AFF",
+              "fontSize": 18,
+              "margin": 8,
+              "textAlign": "center",
+            },
+            Object {
+              "color": "red",
+            },
+          ]
+        }
+      >
+        1
+      </Text>
+    </View>
   </View>
 </View>
 `;
 
 exports[`renders correctly with props when selected 1`] = `
 <View
-  accessibilityRole="button"
-  accessibilityState={Object {}}
   accessible={true}
+  collapsable={false}
   focusable={true}
+  onBlur={[Function]}
   onClick={[Function]}
+  onFocus={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -109,34 +158,57 @@ exports[`renders correctly with props when selected 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "opacity": 1,
+      "height": 50,
+      "paddingLeft": 5,
+      "paddingRight": 5,
+      "width": 80,
     }
   }
 >
   <View
+    accessibilityRole="button"
+    accessibilityState={Object {}}
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {},
-      ]
+      Object {
+        "opacity": 1,
+      }
     }
+    testID="button-red"
   >
-    <Text
+    <View
       style={
         Array [
-          Object {
-            "color": "#007AFF",
-            "fontSize": 18,
-            "margin": 8,
-            "textAlign": "center",
-          },
-          Object {
-            "color": "blue",
-          },
+          Object {},
         ]
       }
     >
-      1
-    </Text>
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#007AFF",
+              "fontSize": 18,
+              "margin": 8,
+              "textAlign": "center",
+            },
+            Object {
+              "color": "blue",
+            },
+          ]
+        }
+      >
+        1
+      </Text>
+    </View>
   </View>
 </View>
 `;

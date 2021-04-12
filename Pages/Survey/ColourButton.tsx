@@ -1,6 +1,5 @@
 import * as React from 'react';
-import {Button} from 'react-native';
-import {TouchableHighlight} from 'react-native-gesture-handler';
+import {Button, Pressable} from 'react-native';
 
 export interface ColourButtonProps {
   index?: number;
@@ -19,7 +18,9 @@ const getButtonStyle = (isSelected: boolean) => ({
   paddingRight: 5,
   paddingLeft: 5,
 });
+
 const noop = () => {};
+
 export const ColourButton = ({
   index = 0,
   selectedIndex,
@@ -27,14 +28,15 @@ export const ColourButton = ({
   colour = 'blue',
   onPress = noop,
 }: ColourButtonProps) => (
-  <TouchableHighlight style={getButtonStyle(index === selectedIndex)}>
+  <Pressable style={getButtonStyle(index === selectedIndex)}>
     <Button
       key={colour}
+      testID={`button-${colour}`}
       title={`${index + 1}`}
       color={index === selectedIndex ? 'blue' : colour}
       onPress={() => {
         onPress({index, name});
       }}
     />
-  </TouchableHighlight>
+  </Pressable>
 );

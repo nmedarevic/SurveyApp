@@ -1,6 +1,12 @@
 import * as React from 'react';
-import {Button, Dimensions, StyleSheet, Text, View} from 'react-native';
-import {TouchableHighlight} from 'react-native-gesture-handler';
+import {
+  Button,
+  Dimensions,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import {QUESTIONS} from '../../config/questions';
 import * as useSurveyHook from '../../hooks/useSurvey';
 import {Alert} from 'react-native';
@@ -76,9 +82,9 @@ export const Survey = ({navigation, route}: any) => {
         ))}
       </View>
       <View>
-        <TouchableHighlight style={styles.submitButton}>
+        <Pressable style={styles.submitButton}>
           <Button title="Submit answer" color="blue" onPress={onSubmit} />
-        </TouchableHighlight>
+        </Pressable>
       </View>
     </View>
   );

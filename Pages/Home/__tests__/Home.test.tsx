@@ -23,7 +23,7 @@ test('should initiate navigation to other pages', async () => {
   expect(surveyButton).toBeTruthy();
   expect(listButton).toBeTruthy();
 
-  fireEvent(surveyButton, 'press');
+  fireEvent.press(surveyButton);
 
   expect(props.navigation.navigate).toHaveBeenCalledWith('Survey');
 });

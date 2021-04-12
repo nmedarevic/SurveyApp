@@ -9,10 +9,10 @@ export type OnPressCallback = {
 };
 
 export interface ColourButtonQuestionProps {
-  onPress: (e: OnPressCallback) => void;
-  selectedIndex: number;
-  name: string;
-  text: string;
+  onPress?: (e: OnPressCallback) => void;
+  selectedIndex?: number;
+  name?: string;
+  text?: string;
 }
 
 export const ColourButtonQuestion = ({
@@ -27,6 +27,7 @@ export const ColourButtonQuestion = ({
       <View style={styles.colourButtonQuestionContainer}>
         {colours.map((colour, index) => (
           <ColourButton
+            data-test={`colour-button-${colour}`}
             key={colour}
             index={index}
             name={name}

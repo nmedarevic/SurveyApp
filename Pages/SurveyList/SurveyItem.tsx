@@ -1,7 +1,6 @@
 import * as React from 'react';
-import {Text, View, Button, StyleSheet} from 'react-native';
+import {Text, View, Button, StyleSheet, Pressable} from 'react-native';
 import {ListItem} from 'react-native-elements';
-import {TouchableHighlight} from 'react-native-gesture-handler';
 import {colours} from '../../config/colours';
 import {QUESTION_TITLES} from '../../config/questions';
 
@@ -21,9 +20,9 @@ const noop = () => {};
 export const ResultContent = ({buttonColour, title, value}: ResultContent) => (
   <View style={styles.surveySingleResultWrapper}>
     <Text>{title}</Text>
-    <TouchableHighlight style={styles.surveySingleResultButton}>
+    <Pressable style={styles.surveySingleResultButton}>
       <Button onPress={noop} title={value} color={buttonColour} />
-    </TouchableHighlight>
+    </Pressable>
   </View>
 );
 
